@@ -349,7 +349,6 @@ Load_WGCF_Profile() {
     elif [[ -f ${WGCF_ProfilePath} ]]; then
         Read_WGCF_Profile
     else
-        Generate_WGCF_Profile
         Backup_WGCF_Profile
         Read_WGCF_Profile
     fi
@@ -445,7 +444,6 @@ Install_WireGuard() {
     Check_WireGuard
     if [[ ${WireGuard_SelfStart} != enabled || ${WireGuard_Status} != active ]]; then
         Install_WireGuardTools
-        Install_WireGuardGo
     else
         log INFO "WireGuard is installed and running."
     fi
